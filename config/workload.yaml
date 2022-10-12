@@ -10,6 +10,7 @@ spec:
   - name: annotations
     value:
       autoscaling.knative.dev/minScale: "2"
+      scale-to-zero-grace-period: "1000s"
   source:
     git:
       url: https://github.com/Eknathreddy09/tanzu-java-web-app
