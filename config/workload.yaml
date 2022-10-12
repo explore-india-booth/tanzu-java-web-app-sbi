@@ -9,8 +9,7 @@ spec:
   params:
   - name: annotations
     value:
-      autoscaling.knative.dev/minScale: "2"
-      autoscaling.knative.dev/scale-down-delay: "30m"
+      autoscaling.knative.dev/minScale: "1"
   source:
     git:
       url: https://github.com/Eknathreddy09/tanzu-java-web-app
