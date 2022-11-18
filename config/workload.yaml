@@ -8,6 +8,10 @@ metadata:
     apps.tanzu.vmware.com/has-tests: "true"
 spec:
   params:
+  - name: testing_pipeline_matching_labels
+    value:
+      apps.tanzu.vmware.com/pipeline: test
+      apps.tanzu.vmware.com/language: java
   - name: annotations
     value:
       autoscaling.knative.dev/minScale: "1"
