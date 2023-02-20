@@ -5,11 +5,11 @@ kind: Secret
 metadata:
   name: gitlab-workload-token
   annotations:
-    tekton.dev/git-0: https://git.company.com
+    tekton.dev/git-0: https://github.com
 type: kubernetes.io/basic-auth
 stringData:
-  username: gl-secret-user
-  password: gl-secret-pass
+  username: eknathreddy09
+  password: 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
 ---
 apiVersion: v1
 kind: Secret
@@ -19,8 +19,8 @@ metadata:
     tekton.dev/git-0: https://github.aetna.com
 type: kubernetes.io/basic-auth
 stringData:
-  username: gh-secret-user
-  password: gh-secret-pass
+  username: eknathreddy09
+  password: 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
 ---
 apiVersion: v1
 kind: ServiceAccount
