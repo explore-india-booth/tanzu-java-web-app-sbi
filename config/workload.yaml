@@ -12,6 +12,12 @@ spec:
     value:
       apps.tanzu.vmware.com/pipeline: test
       apps.tanzu.vmware.com/language: java
+      apps.tanzu.vmware.com/pipeline: jenkins-pipeline
+  - name: testing_pipeline_params
+    value:
+      job-name: maven_test
+      secret-name: jenkins-tls
+      job-params: "[{\"name\":\"A\",\"value\":\"x\"},{\"name\":\"B\",\"value\":\"y\"},...]"
   - name: annotations
     value:
       autoscaling.knative.dev/minScale: "1"
