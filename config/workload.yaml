@@ -17,7 +17,7 @@ spec:
     value:
       job-name: maven_test
       secret-name: jenkins-tls
-      job-params: "[{\"name\":\"A\",\"value\":\"x\"},{\"name\":\"B\",\"value\":\"y\"},...]"
+      job-params: "[{\"name\":\"GIT-URL\",\"value\":\"https://github.com/Eknathreddy09/tanzu-java-web-app\"},{\"name\":\"GIT-BRANCH\",\"value\":\"main\"}]"
   - name: annotations
     value:
       autoscaling.knative.dev/minScale: "1"
