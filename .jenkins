@@ -1,3 +1,5 @@
+#!/bin/env groovy
+
 pipeline {
   agent any
 
@@ -5,13 +7,16 @@ pipeline {
     stage('Checkout code') {
       steps {
         script {
-          sourceUrl = "https://github.com/Eknathreddy09/tanzu-java-web-app"
+          sourceUrl = params.SOURCE-REVISION
+          echo "My sourceUrl is: $sourceUrl"
           indexSlash = sourceUrl.indexOf("/")
+          echo "My indexSlash is: $indexSlash"
           revision = sourceUrl.substring(indexSlash + 1)
+          echo "My revision is: $revision"
         }
-        sh "git clone $sourceUrl test-repo"
+        sh "git clone ${params.GIT-URL} test-repo"
         dir("test-repo") {
-          sh "git checkout main"
+          sh "git checkout ${revision}"
         }
       }
     }
