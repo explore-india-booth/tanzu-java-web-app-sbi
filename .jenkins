@@ -6,11 +6,8 @@ pipeline {
       steps {
         script {
           sourceUrl = "https://github.com/Eknathreddy09/tanzu-java-web-app"
-          echo "$sourceUrl"
           indexSlash = sourceUrl.indexOf("/")
-          echo "$indexSlash"
           revision = sourceUrl.substring(indexSlash + 1)
-          echo "$revision"
         }
         sh "git clone $sourceUrl test-repo"
         dir("test-repo") {
@@ -26,6 +23,11 @@ pipeline {
             sh "mvn clean test --no-transfer-progress"
           }
         }
+    }
+    stage('clean') {
+       steps {
+          sh "rm -r test-repo"
+      }
     }
   }
 }
