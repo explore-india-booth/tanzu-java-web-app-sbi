@@ -9,7 +9,7 @@ pipeline {
           indexSlash = sourceUrl.indexOf("/")
           revision = main
         }
-        sh "git clone ${params.GIT-URL} target"
+        sh "git clone https://github.com/Eknathreddy09/tanzu-java-web-app target"
         dir("target") {
           sh "git checkout ${revision}"
         }
