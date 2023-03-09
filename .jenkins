@@ -12,8 +12,8 @@ pipeline {
           revision = sourceUrl.substring(indexSlash + 1)
           echo "$revision"
         }
-        sh "git clone $sourceUrl target"
-        dir("target") {
+        sh "git clone $sourceUrl test-repo"
+        dir("test-repo") {
           sh "git checkout ${revision}"
         }
       }
@@ -22,7 +22,7 @@ pipeline {
     stage('Maven test') {
       steps {
         container('maven') {
-          dir("target") {
+          dir("test-repo") {
             // Example tests with maven
             sh "mvn clean test --no-transfer-progress"
           }
