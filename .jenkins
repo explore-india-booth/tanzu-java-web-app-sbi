@@ -1,10 +1,36 @@
+#!/bin/env groovy
+
 pipeline {
-  agent any
+  agent {
+    kubernetes {
+      label 'maven'
+    }
+  }
+
   stages {
-     stage('Test') {
-        steps {
-            sh 'mvn clean test'
+    stage('Checkout code') {
+      steps {
+        script {
+          sourceUrl = params.SOURCE-REVISION
+          indexSlash = sourceUrl.indexOf("/")
+          revision = sourceUrl.substring(indexSlash + 1)
+        }
+        sh "git clone ${params.GIT-URL} target"
+        dir("target") {
+          sh "git checkout ${revision}"
+        }
+      }
+    }
+
+    stage('Maven test') {
+      steps {
+        container('maven') {
+          dir("target") {
+            // Example tests with maven
+            sh "mvn clean test --no-transfer-progress"
           }
         }
       }
-   }
+    }
+  }
+}
