@@ -7,9 +7,9 @@ pipeline {
     stage('Checkout code') {
       steps {
         script {
-          sourceUrl = params.SOURCE-REVISION
+          sourceUrl = https://github.com/Eknathreddy09/tanzu-java-web-app
           indexSlash = sourceUrl.indexOf("/")
-          revision = sourceUrl.substring(indexSlash + 1)
+          revision = main
         }
         sh "git clone ${params.GIT-URL} target"
         dir("target") {
