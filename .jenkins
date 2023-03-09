@@ -14,7 +14,7 @@ pipeline {
         }
         sh "git clone $sourceUrl test-repo"
         dir("test-repo") {
-          sh "git checkout ${revision}"
+          sh "git checkout main"
         }
       }
     }
