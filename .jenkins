@@ -1,11 +1,7 @@
 #!/bin/env groovy
 
 pipeline {
-  agent {
-    kubernetes {
-      label 'maven'
-    }
-  }
+  agent any
 
   stages {
     stage('Checkout code') {
