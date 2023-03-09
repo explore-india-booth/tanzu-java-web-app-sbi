@@ -27,6 +27,7 @@ pipeline {
     stage('clean') {
        steps {
           sh "rm -r test-repo"
+          sh "rm -r test-repo@tmp"
       }
     }
   }
