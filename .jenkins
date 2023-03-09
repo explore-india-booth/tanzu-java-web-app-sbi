@@ -21,13 +21,11 @@ pipeline {
 
     stage('Maven test') {
       steps {
-        container('maven') {
           dir("test-repo") {
             // Example tests with maven
             sh "mvn clean test --no-transfer-progress"
           }
         }
-      }
     }
   }
 }
