@@ -6,11 +6,11 @@ pipeline {
       steps {
         script {
           sourceUrl = "https://github.com/Eknathreddy09/tanzu-java-web-app"
-          sh "echo $sourceUrl"
+          echo "$sourceUrl"
           indexSlash = sourceUrl.indexOf("/")
-          sh "echo $indexSlash"
+          echo "$indexSlash"
           revision = sourceUrl.substring(indexSlash + 1)
-          sh "echo $revision"
+          echo "$revision"
         }
         sh "git clone $sourceUrl target"
         dir("target") {
