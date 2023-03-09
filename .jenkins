@@ -1,0 +1,9 @@
+pipeline {
+  agent any
+  stages 
+    stage('Maven test') {
+      steps {
+            sh "mvn clean test --no-transfer-progress"
+          }
+        }
+      }
