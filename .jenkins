@@ -7,7 +7,7 @@ pipeline {
     stage('Checkout code') {
       steps {
         script {
-          sourceUrl = https://github.com/Eknathreddy09/tanzu-java-web-app
+          sourceUrl = "https://github.com/Eknathreddy09/tanzu-java-web-app"
           indexSlash = sourceUrl.indexOf("/")
           revision = main
         }
