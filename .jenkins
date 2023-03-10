@@ -31,7 +31,8 @@ pipeline {
     }
     stage('Clean') {
       steps {
-        sh "rm -r test-repo"
+        sh "sudo rm -r test-repo"
+        sh "sudo rm -r test-repo@tmp"
       }
     }
   }
