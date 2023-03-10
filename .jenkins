@@ -7,7 +7,7 @@ pipeline {
     stage('Checkout code') {
       steps {
         script {
-          sourceUrl = params.SOURCE-REVISION
+          sourceUrl = ${params.SOURCE-REVISION}
           echo "My sourceUrl is: $sourceUrl"
           indexSlash = sourceUrl.indexOf("/")
           echo "My indexSlash is: $indexSlash"
@@ -28,12 +28,6 @@ pipeline {
             sh "mvn clean test --no-transfer-progress"
           }
         }
-    }
-    stage('clean') {
-       steps {
-          sh "rm -r test-repo"
-          sh "rm -r test-repo@tmp"
-      }
     }
   }
 }
