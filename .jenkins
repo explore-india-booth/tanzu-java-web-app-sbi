@@ -7,7 +7,7 @@ pipeline {
     stage('Checkout code') {
       steps {
         script {
-          sourceUrl = ${params.SOURCE-REVISION}
+          sourceUrl = params.SOURCE-REVISION
           echo "My sourceUrl is: $sourceUrl"
           indexSlash = sourceUrl.indexOf("/")
           echo "My indexSlash is: $indexSlash"
