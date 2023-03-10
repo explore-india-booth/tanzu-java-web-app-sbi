@@ -31,8 +31,8 @@ pipeline {
     }
     stage('Clean') {
       steps {
-        sh "sudo rm -r /var/lib/jenkins/workspace/maven_test/test-repo"
-        sh "sudo rm -r /var/lib/jenkins/workspace/maven_test/test-repo@tmp"
+        sh "rm -r /var/lib/jenkins/workspace/maven_test/test-repo"
+        sh "rm -r /var/lib/jenkins/workspace/maven_test/test-repo@tmp"
       }
     }
   }
