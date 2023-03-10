@@ -16,7 +16,7 @@ pipeline {
         }
         sh "git clone https://github.com/Eknathreddy09/tanzu-java-web-app test-repo"
         dir("test-repo") {
-          sh "git checkout ${env.revision}"
+          sh "git checkout ${revision}"
         }
       }
     }
