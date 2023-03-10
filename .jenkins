@@ -7,14 +7,14 @@ pipeline {
     stage('Checkout code') {
       steps {
         script {
-          sourceUrl = params.SOURCE-REVISION
+          sourceUrl = main/47f00de17ca6ed7cec89a70675e25e9acc3f2d8f
           echo "My sourceUrl is: $sourceUrl"
           indexSlash = sourceUrl.indexOf("/")
           echo "My indexSlash is: $indexSlash"
           revision = sourceUrl.substring(indexSlash + 1)
           echo "My revision is: $revision"
         }
-        sh "git clone ${params.GIT-URL} test-repo"
+        sh "git clone https://github.com/Eknathreddy09/tanzu-java-web-app test-repo"
         dir("test-repo") {
           sh "git checkout ${env.revision}"
         }
