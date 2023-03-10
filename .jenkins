@@ -16,7 +16,7 @@ pipeline {
         }
         sh "git clone ${params.GIT-URL} test-repo"
         dir("test-repo") {
-          sh "git checkout ${revision}"
+          sh "git checkout ${env.revision}"
         }
       }
     }
