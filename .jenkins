@@ -29,5 +29,10 @@ pipeline {
           }
         }
     }
+    stage('Clean') {
+      steps {
+        sh "rm -r test-repo"
+      }
+    }
   }
 }
