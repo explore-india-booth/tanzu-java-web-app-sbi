@@ -7,7 +7,7 @@ pipeline {
     stage('Checkout code') {
       steps {
         script {
-          sourceUrl = main/47f00de17ca6ed7cec89a70675e25e9acc3f2d8f
+          sourceUrl = "main/47f00de17ca6ed7cec89a70675e25e9acc3f2d8f"
           echo "My sourceUrl is: $sourceUrl"
           indexSlash = sourceUrl.indexOf("/")
           echo "My indexSlash is: $indexSlash"
