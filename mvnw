@@ -214,7 +214,7 @@ else
     if [ -n "$MVNW_REPOURL" ]; then
       jarUrl="$MVNW_REPOURL/io/takari/maven-wrapper/0.5.6/maven-wrapper-0.5.6.jar"
     else
-      jarUrl="https://reposilite.corp.ad.sbi/releases/maven-wrapper-0.5.6.jar"
+      jarUrl="http://reposilite.corp.ad.sbi/releases/maven-wrapper-0.5.6.jar"
     fi
     while IFS="=" read key value; do
       case "$key" in (wrapperUrl) jarUrl="$value"; break ;;
